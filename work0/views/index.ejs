@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <title>temp graph</title>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const date = <%- date %>;
+    const temp = <%- temp %>;
+    console.log(typeof date);
+    console.log(date);
+    console.log(temp);
+    new Chart(document.getElementById('canvas'), {
+    type: 'line',
+    data: {
+        labels: date,
+        datasets: [{
+            label: 'pinpin001',
+            data: temp
+        }]
+    },
+    options: {
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: 'time'
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'temp'
+                }
+            }
+        }
+    }
+    });
+</script>
+</html>

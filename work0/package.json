@@ -1,0 +1,27 @@
+{
+  "name": "work0",
+  "version": "1.0.0",
+  "description": "visualization graph with chois data",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp && nodemon app",
+    "lint": "npx eslint ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2",
+    "sequelize-auto": "^0.8.2",
+    "sequelize-cli": "^6.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.24.0",
+    "gulp": "^3.9.1",
+    "nodemon": "^2.0.7"
+  }
+}
