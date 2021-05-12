@@ -1,3 +1,19 @@
-block content
-  h1= title
-  p Welcome to #{title}
+doctype html
+html
+    head
+        title= index
+        link(rel='stylesheet', href='/stylesheets/index_style.css')
+    body
+        h1 select patient / time
+
+        table(border='1', align='center')
+            thead
+                td rid
+                td group_id
+                td patient_id
+            tbody
+                each u in users
+                    tr 
+                        td= u.rid
+                        td= u.group_id
+                        td= u.patient_id

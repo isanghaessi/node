@@ -1,0 +1,27 @@
+doctype html
+html
+    head
+        title= graph
+    body
+    
+    
+    link(rel='stylesheet', href='uPlot/uPlot.min.css')
+    script(src='uPlot/uPlot.iife.min.js')
+    script.
+        const temp = !{temp};
+        const date = !{date}.map(d => new Date(d) / 1000);
+        let opts = {
+            title: 'graph',
+            width: 800,
+            height: 600,
+            series: [
+                {},
+                {
+                    show: true,
+                    label: 'temp',
+                    stroke: 'black',
+                    width: '1'
+                }
+            ]
+        };
+        let uplot = new uPlot(opts, [date, temp], document.body);
