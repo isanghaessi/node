@@ -1,2 +1,4 @@
-#ignore node files
 **/node_modules
+**/models
+
+**/.DS_Store

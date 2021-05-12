@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "test_user",
-    "password": "test_pw",
-    "database": "test_db",
-    "host": "test_host",
+    "username": "test", 
+    "password": "test",
+    "database": "test",
+    "host": "3.36.243.240",
     "dialect": "mysql"
   }
 }

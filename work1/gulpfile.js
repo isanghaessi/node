@@ -1,4 +1,3 @@
-const { resolveInclude } = require('ejs');
 const gulp = require('gulp');
 
 gulp.task('default', async () => {
@@ -14,5 +13,3 @@ gulp.task('default', async () => {
 		}
 	});
 });
-// -----> sequelize-cli 커맨드
-// sequelize-auto -o "./models" -d chois -h localhost -u root -p 3306 -x tmddyd -e mysql
