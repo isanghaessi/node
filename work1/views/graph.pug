@@ -3,17 +3,30 @@ html
     head
         title= graph
     body
-    
-    
+    button(id='home_button') home
     link(rel='stylesheet', href='uPlot/uPlot.min.css')
     script(src='uPlot/uPlot.iife.min.js')
     script.
-        const temp = !{temp};
-        const date = !{date}.map(d => new Date(d) / 1000);
-        let opts = {
-            title: 'graph',
-            width: 800,
-            height: 600,
+        const data = !{data};
+        console.log('???')
+        console.log(data)
+        if (data.length === 0) {
+            alert('There\'s no data!');
+            location.href='/'
+        }
+        const group_id = data[0]['group_id'];
+        const patient_id = data[0]['patient_id'];
+        let temp = [];
+        let date = [];
+        for (d of data) {
+            date.push(new Date(d['reg_date']) / 1000)
+            temp.push(d['temp'])
+        }
+        const opts = {
+            id: 'graph',
+            title: `group_id: ${group_id}, patient_id: ${patient_id}`,
+            width: window.innerWidth * 9 / 10,
+            height: window.innerHeight * 9 / 10,
             series: [
                 {},
                 {
@@ -24,4 +37,7 @@ html
                 }
             ]
         };
-        let uplot = new uPlot(opts, [date, temp], document.body);
+        const uplot = new uPlot(opts, [date, temp], document.body);
+
+    link(rel='stylesheet', href='stylesheets/graph_style.css')
+    script(src='javascripts/graph_script.js')

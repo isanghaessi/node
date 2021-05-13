@@ -1,12 +1,13 @@
-h1 {
+h1,
+h2,
+form {
 	text-align: center;
 }
 
 table {
-	text-align: left;
-	width: 100px;
 	margin: 0 auto;
 }
-thead {
+thead,
+label {
 	font-weight: bold;
 }

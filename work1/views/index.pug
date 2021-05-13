@@ -2,18 +2,39 @@ doctype html
 html
     head
         title= index
-        link(rel='stylesheet', href='/stylesheets/index_style.css')
     body
-        h1 select patient / time
-
+        h1 plot page
+        br
+        h2 plot graph with group_id / patient_id / time scope
+        form(action='/graph', method='get', id='graph_form')
+            div
+                label(for='group_id_input') group_id: 
+                input(type='text', id='group_id_input', name='group_id_input')
+            div
+                label(for='patient_id_input') patient_id: 
+                input(type='text', id='patient_id_input', name='patient_id_input')
+            div
+                label(for='from_input') from: 
+                input(type='date', id='from_input', name='from_input')
+                span 
+                label(for='from_input') to:
+                input(type='date', id='to_input', name='to_input')
+            button(type='submit') plot
+        h2 search with group_id / patient_id
+        form(action='/search', method='get')
+            div
+                input(type='text', id='search_input', name='search_input')
+                button(type='submit') search
+        br
         table(border='1', align='center')
             thead
-                td rid
                 td group_id
                 td patient_id
             tbody
                 each u in users
                     tr 
-                        td= u.rid
                         td= u.group_id
                         td= u.patient_id
+
+        link(rel='stylesheet', href='/stylesheets/index_style.css')
+        script(src='javascripts/index_script.js')
