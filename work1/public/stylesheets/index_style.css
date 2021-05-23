@@ -1,13 +1,12 @@
 h1,
-h2,
 form {
 	text-align: center;
 }
 
+legend {
+	font-weight: bolder;
+}
+
 table {
 	margin: 0 auto;
-}
-thead,
-label {
-	font-weight: bold;
 }

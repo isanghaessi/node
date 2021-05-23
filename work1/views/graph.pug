@@ -8,8 +8,6 @@ html
     script(src='uPlot/uPlot.iife.min.js')
     script.
         const data = !{data};
-        console.log('???')
-        console.log(data)
         if (data.length === 0) {
             alert('There\'s no data!');
             location.href='/'
@@ -19,7 +17,7 @@ html
         let temp = [];
         let date = [];
         for (d of data) {
-            date.push(new Date(d['reg_date']) / 1000)
+            date.push(Math.floor((new Date(d['reg_date'])).getTime() / 1000))
             temp.push(d['temp'])
         }
         const opts = {
@@ -38,6 +36,19 @@ html
             ]
         };
         const uplot = new uPlot(opts, [date, temp], document.body);
+
+        function timeConverter(UNIX_timestamp) {
+            var a = new Date(UNIX_timestamp * 1000);
+            var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+            var year = a.getFullYear();
+            var month = months[a.getMonth()];
+            var date = a.getDate();
+            var hour = a.getHours();
+            var min = a.getMinutes();
+            var sec = a.getSeconds();
+            var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+            return time;
+        }
 
     link(rel='stylesheet', href='stylesheets/graph_style.css')
     script(src='javascripts/graph_script.js')
