@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "gulp && nodemon ./bin/www",
+    "start": "rm models/* && gulp && nodemon ./bin/www",
     "lint": "eslint ."
   },
   "dependencies": {
